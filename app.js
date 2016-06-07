@@ -51,8 +51,9 @@ app.post('/email', function(req,res){
     theirMessage.city + ',<br> ' +
     theirMessage.linkedIn + ' ' + theirMessage.github + ' ' + theirMessage.email + ' ' +
     theirMessage.phone;
-  var htmlMessage = '<style> div{background: red; margin: 20px;} </style> <div>' +
-    theirMessage.name + '<br>' + theirMessage.profession +'</div>';
+  var htmlMessage = '<p>' + theirMessage.name + '<br>' + theirMessage.profession + '<br>' +
+    theirMessage.city + '<br>LinkedIn: ' + theirMessage.linkedIn + '<br>Github:' + theirMessage.github +
+    '<br>Email: ' + theirMessage.email + '<br>Phone: ' + theirMessage.phone + '</p>';
   mailer(recipient, theirSubject, plainMessage, htmlMessage);
   mailer(myEmail, mySubject, myMessage, '<p>' + myMessage + '</p>');
   res.json({message: 'emails sent'});
