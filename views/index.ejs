@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MyApp">
 <head>
-  <title>Matt Parvinsmith's MEAN Boilerplate</title>
+  <title>E-Business Card</title>
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
-<body>
-  <h1>Under construction</h1>
-  <p>Thank you for bearing with me as this website comes together</p>
+<body ng-controller="IndexController as ctrl">
+  <h1>Thank you for your interest</h1>
+  <p>Please enter your email in the form below:</p>
+  <div>
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" name="email">
+      <button>Submit</button>
+    </form>
+  </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="/js/index.js" type="text/javascript"></script>
+  <script src="/js/indexController.js"></script>
 </body>
 </html>
