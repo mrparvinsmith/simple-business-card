@@ -28,6 +28,36 @@ app.get('/', function(req, res){
 
 app.use('/users', userRoutes);
 
+// nodemailer stuff
+var mailer = require('./config/nodemailer');
+app.post('/email', function(req,res){
+  var myEmail = 'mpvirtualbusinesscard@gmail.com';
+  console.log(req.body);
+  var recipient = req.body.recipient;
+  var mySubject = 'Card sent to ' + recipient;
+  var theirSubject = 'Virtual business card from Matt Parvinsmith';
+  var myMessage = 'A card was sent to ' + recipient;
+  var theirMessage = {
+    name: 'Matt Parvinsmith',
+    email: 'mrparvinsmith@gmail.com',
+    github: 'https://github.com/mrparvinsmith',
+    linkedIn: 'https://www.linkedin.com/in/mattparvinsmith',
+    phone: '(781)-635-5734',
+    // website: 'www.mattparvinsmith.com',
+    profession: 'Web Developer',
+    city: 'Santa Monica, CA',
+  };
+  var plainMessage = theirMessage.name + ' - ' + theirMessage.profession + ', ' +
+    theirMessage.city + ',<br> ' +
+    theirMessage.linkedIn + ' ' + theirMessage.github + ' ' + theirMessage.email + ' ' +
+    theirMessage.phone;
+  var htmlMessage = '<style> div{background: red; margin: 20px;} </style> <div>' +
+    theirMessage.name + '<br>' + theirMessage.profession +'</div>';
+  mailer(recipient, theirSubject, plainMessage, htmlMessage);
+  mailer(myEmail, mySubject, myMessage, '<p>' + myMessage + '</p>');
+  res.json({message: 'emails sent'});
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log('listening on ' + port);

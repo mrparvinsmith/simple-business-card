@@ -8,9 +8,9 @@
   <h1>Thank you for your interest</h1>
   <p>Please enter your email in the form below:</p>
   <div>
-    <form>
+    <form ng-submit="ctrl.sendEmail()">
       <label for="email">Email:</label>
-      <input type="email" name="email">
+      <input type="email" name="email" ng-model="ctrl.email.recipient">
       <button>Submit</button>
     </form>
   </div>
