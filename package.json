@@ -1,21 +1,21 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "This is my portfolio website!   [Behold!](http://www.mattparvinsmith.com)",
+  "description": "This is a website!",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrparvinsmith/portfolio-website.git"
+    "url": "git+https://github.com/mrparvinsmith/simple-business-card.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrparvinsmith/portfolio-website/issues"
+    "url": "https://github.com/mrparvinsmith/simple-business-card/issues"
   },
-  "homepage": "https://github.com/mrparvinsmith/portfolio-website#readme",
+  "homepage": "https://github.com/mrparvinsmith/simple-business-card#readme",
   "dependencies": {
     "body-parser": "^1.15.1",
     "connect-ensure-login": "^0.1.1",
