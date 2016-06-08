@@ -26,7 +26,7 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-app.use('/users', userRoutes);
+// app.use('/users', userRoutes);
 
 // nodemailer stuff
 var mailer = require('./config/nodemailer');
